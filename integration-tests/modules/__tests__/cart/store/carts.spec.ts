@@ -1146,6 +1146,7 @@ medusaIntegrationTestRunner({
               `/admin/inventory-items`,
               {
                 sku: "12345",
+                requires_shipping: false,
               },
               adminHeaders
             )

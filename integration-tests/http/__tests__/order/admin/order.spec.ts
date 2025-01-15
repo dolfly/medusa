@@ -345,9 +345,19 @@ medusaIntegrationTestRunner({
 
     describe("POST /orders/:id/cancel", () => {
       beforeEach(async () => {
+        const inventoryItemOverride = (
+          await api.post(
+            `/admin/inventory-items`,
+            { sku: "test-variant", requires_shipping: false },
+            adminHeaders
+          )
+        ).data.inventory_item
+
         seeder = await createOrderSeeder({
           api,
           container: getContainer(),
+          inventoryItemOverride,
+          withoutShipping: true,
         })
         order = seeder.order
 

@@ -24,7 +24,11 @@ import {
 import { createOrdersStep } from "../../order/steps/create-orders"
 import { authorizePaymentSessionStep } from "../../payment/steps/authorize-payment-session"
 import { registerUsageStep } from "../../promotion/steps/register-usage"
-import { updateCartsStep, validateCartPaymentsStep } from "../steps"
+import {
+  updateCartsStep,
+  validateCartPaymentsStep,
+  validateShippingStep,
+} from "../steps"
 import { reserveInventoryStep } from "../steps/reserve-inventory"
 import { completeCartFields } from "../utils/fields"
 import { prepareConfirmInventoryInput } from "../utils/prepare-confirm-inventory-input"
@@ -75,6 +79,8 @@ export const completeCartWorkflow = createWorkflow(
         variables: { id: input.id },
         list: false,
       })
+
+      validateShippingStep({ cart })
 
       const paymentSessions = validateCartPaymentsStep({ cart })
 

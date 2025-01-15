@@ -18,6 +18,7 @@ export async function createOrderSeeder({
   additionalProducts,
   stockChannelOverride,
   inventoryItemOverride,
+  withoutShipping,
 }: {
   api: any
   container: MedusaContainer
@@ -26,6 +27,7 @@ export async function createOrderSeeder({
   stockChannelOverride?: AdminStockLocation
   additionalProducts?: { variant_id: string; quantity: number }[]
   inventoryItemOverride?: AdminInventoryItem
+  withoutShipping?: boolean
 }) {
   const publishableKey = await generatePublishableKey(container)
 
@@ -216,6 +218,14 @@ export async function createOrderSeeder({
       storeHeaders
     )
   ).data.cart
+
+  if (!withoutShipping) {
+    await api.post(
+      `/store/carts/${cart.id}/shipping-methods`,
+      { option_id: shippingOption.id },
+      storeHeaders
+    )
+  }
 
   const paymentCollection = (
     await api.post(
