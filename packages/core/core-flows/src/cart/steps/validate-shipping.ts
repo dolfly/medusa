@@ -59,9 +59,7 @@ export const validateShippingStep = createStep(
     if (missingShippingPorfiles.length > 0) {
       throw new MedusaError(
         MedusaError.Types.INVALID_DATA,
-        `The cart contains items that require shipping profiles that are not available: ${missingShippingPorfiles.join(
-          ", "
-        )}`
+        "The cart items require shipping profiles that are not satisfied by the current shipping methods"
       )
     }
 

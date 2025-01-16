@@ -1385,7 +1385,7 @@ medusaIntegrationTestRunner({
 
             expect(response.response.status).toEqual(400)
             expect(response.response.data.message).toEqual(
-              `The cart contains items that require shipping profiles that are not available: ${specialShippingProfile.id}`
+              "The cart items require shipping profiles that are not satisfied by the current shipping methods"
             )
           })
         })
