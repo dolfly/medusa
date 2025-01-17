@@ -8144,12 +8144,63 @@
             "status": {
               "type": "object",
               "properties": {
-                "title": {
+                "label": {
                   "type": "string"
+                },
+                "draft": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "description"
+                  ],
+                  "additionalProperties": false
+                },
+                "active": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "description"
+                  ],
+                  "additionalProperties": false
+                },
+                "inactive": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "description"
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
-                "title"
+                "label",
+                "draft",
+                "active",
+                "inactive"
               ],
               "additionalProperties": false
             },
@@ -9407,6 +9458,9 @@
         "deleteUserWarning": {
           "type": "string"
         },
+        "deleteUserSuccess": {
+          "type": "string"
+        },
         "invite": {
           "type": "string"
         }
@@ -9427,6 +9481,7 @@
         "inviteStatus",
         "roles",
         "deleteUserWarning",
+        "deleteUserSuccess",
         "invite"
       ],
       "additionalProperties": false
@@ -11272,6 +11327,12 @@
         "active": {
           "type": "string"
         },
+        "inactive": {
+          "type": "string"
+        },
+        "draft": {
+          "type": "string"
+        },
         "enabled": {
           "type": "string"
         },
@@ -11283,6 +11344,8 @@
         "scheduled",
         "expired",
         "active",
+        "inactive",
+        "draft",
         "enabled",
         "disabled"
       ],
