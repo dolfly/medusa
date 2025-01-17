@@ -116,4 +116,10 @@ export const LINKS = {
     Modules.FULFILLMENT,
     "fulfillment_id"
   ),
+  CustomerAccountHolder: composeLinkName(
+    Modules.CUSTOMER,
+    "customer_id",
+    Modules.PAYMENT,
+    "account_holder_id"
+  ),
 }
