@@ -1,6 +1,7 @@
 import {
   AdminInventoryItem,
   AdminProduct,
+  AdminShippingProfile,
   AdminStockLocation,
   MedusaContainer,
 } from "@medusajs/types"
@@ -18,6 +19,7 @@ export async function createOrderSeeder({
   additionalProducts,
   stockChannelOverride,
   inventoryItemOverride,
+  shippingProfileOverride,
   withoutShipping,
 }: {
   api: any
@@ -27,6 +29,7 @@ export async function createOrderSeeder({
   stockChannelOverride?: AdminStockLocation
   additionalProducts?: { variant_id: string; quantity: number }[]
   inventoryItemOverride?: AdminInventoryItem
+  shippingProfileOverride?: AdminShippingProfile
   withoutShipping?: boolean
 }) {
   const publishableKey = await generatePublishableKey(container)
@@ -88,13 +91,15 @@ export async function createOrderSeeder({
     adminHeaders
   )
 
-  const shippingProfile = (
-    await api.post(
-      `/admin/shipping-profiles`,
-      { name: `test-${stockLocation.id}`, type: "default" },
-      adminHeaders
-    )
-  ).data.shipping_profile
+  const shippingProfile =
+    shippingProfileOverride ??
+    (
+      await api.post(
+        `/admin/shipping-profiles`,
+        { name: `test-${stockLocation.id}`, type: "default" },
+        adminHeaders
+      )
+    ).data.shipping_profile
 
   const product =
     productOverride ??

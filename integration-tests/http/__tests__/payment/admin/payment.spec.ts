@@ -38,6 +38,7 @@ medusaIntegrationTestRunner({
     beforeEach(async () => {
       container = getContainer()
       await createAdminUser(dbConnection, adminHeaders, container)
+
       const inventoryItemOverride = (
         await api.post(
           `/admin/inventory-items`,
@@ -52,6 +53,7 @@ medusaIntegrationTestRunner({
         inventoryItemOverride,
         withoutShipping: true,
       })
+
       order = seeders.order
 
       await api.post(
