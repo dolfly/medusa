@@ -714,6 +714,14 @@ const generatedgeneratedCommerceModulesSidebarSidebar = {
                       "loaded": true,
                       "isPathHref": true,
                       "type": "ref",
+                      "title": "requestVerificationWorkflow",
+                      "path": "https://docs.medusajs.com/resources/references/medusa-workflows/requestVerificationWorkflow",
+                      "children": []
+                    },
+                    {
+                      "loaded": true,
+                      "isPathHref": true,
+                      "type": "ref",
                       "title": "setAuthAppMetadataWorkflow",
                       "path": "https://docs.medusajs.com/resources/references/medusa-workflows/setAuthAppMetadataWorkflow",
                       "children": []
@@ -729,6 +737,14 @@ const generatedgeneratedCommerceModulesSidebarSidebar = {
                   "autogenerate_as_ref": true,
                   "sort_sidebar": "alphabetize",
                   "children": [
+                    {
+                      "loaded": true,
+                      "isPathHref": true,
+                      "type": "ref",
+                      "title": "requestVerificationStep",
+                      "path": "https://docs.medusajs.com/resources/references/medusa-workflows/steps/requestVerificationStep",
+                      "children": []
+                    },
                     {
                       "loaded": true,
                       "isPathHref": true,
@@ -782,14 +798,6 @@ const generatedgeneratedCommerceModulesSidebarSidebar = {
                   "type": "ref",
                   "title": "refresh",
                   "path": "https://docs.medusajs.com/resources/references/js-sdk/auth/refresh",
-                  "children": []
-                },
-                {
-                  "loaded": true,
-                  "isPathHref": true,
-                  "type": "ref",
-                  "title": "register",
-                  "path": "https://docs.medusajs.com/resources/references/js-sdk/auth/register",
                   "children": []
                 },
                 {
