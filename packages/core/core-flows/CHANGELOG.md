@@ -1,5 +1,14 @@
 # @medusajs/core-flows
 
+## 2.20.2
+
+### Patch Changes
+
+- [#16129](https://github.com/medusajs/medusa/pull/16129) [`2097e7b43f3d4525b1a909dbe4cb6fb634765893`](https://github.com/medusajs/medusa/commit/2097e7b43f3d4525b1a909dbe4cb6fb634765893) Thanks [@shahednasser](https://github.com/shahednasser)! - fix(core-flows): validate cart currency_code against the region's currency on create
+
+- Updated dependencies []:
+  - @medusajs/framework@2.20.2
+
 ## 2.20.1
 
 ### Patch Changes
